@@ -1,0 +1,62 @@
+kiss-extra
+----------
+
+This is a repository for kiss utilities that do not belong with
+the rest of the utilities. These are non-essential scripts that
+someone could make use of in their scripts. Some of them can be
+used for repository management, so I think maintainers could be
+interested in a variety of utilities here.
+
+
+Install
+-------
+
+Those scripts currently only depend on kiss (and dependencies of
+kiss).
+
+You can install by doing
+
+    for script in kiss-*; do
+        install -Dm755 "$script" "/usr/local/bin/$script"
+    done
+
+
+Or install the `kiss-extra` package on Carbs Linux.
+
+
+New Scripts
+-----------
+
+New scripts should be added in a standard manner. You should
+keep these in mind,
+
+It should start with a docstring right after the shebang. No
+empty line in between.
+
+    #!/bin/sh
+    # A docstring explaining the script
+
+
+It should provide a usage if '--help' or '-h' is provided as an
+argument. If you script takes any arguments, it should also display
+a usage if not argument is given.
+
+Usage should exit with 0 status code, and should be printed to the
+standard output, not stderr. Usage should be a single line string
+small and to the point.
+
+    case "$1" in ''|--help|-h) printf 'usage......'; exit 0; esac
+
+
+Licensing
+---------
+
+This repository contains scripts that were initially in the package
+manager itself. Some of these were initially authored by Dylan Araps.
+License notices are made where needed.
+
+
+Carbs Linux directory
+---------------------
+
+Carbs Linux directory is for 
