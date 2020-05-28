@@ -16,12 +16,25 @@ kiss).
 
 You can install by doing
 
-    for script in kiss-*; do
-        install -Dm755 "$script" "/usr/local/bin/$script"
+    find . -type f -name 'kiss-*' | while read -r script; do
+        install -Dm755 "$script" "/usr/local/bin/${script##*/}"
     done
 
 
 Or install the `kiss-extra` package on Carbs Linux.
+
+
+Repository structure
+--------------------
+
+Scripts are dividied into categoried folders.
+
+
+    /
+    ├── alt   - scripts related to the alternatives system.
+    ├── other - self explanatory
+    └── repo  - scripts for repository management
+        └── git  - scripts for git operations, commit messages etc.
 
 
 New Scripts
@@ -54,9 +67,3 @@ Licensing
 This repository contains scripts that were initially in the package
 manager itself. Some of these were initially authored by Dylan Araps.
 License notices are made where needed.
-
-
-Carbs Linux directory
----------------------
-
-Carbs Linux directory is for 

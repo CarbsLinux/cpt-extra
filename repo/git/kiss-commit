@@ -1,0 +1,5 @@
+#!/bin/sh
+# Commit a package without the prefix of 'package:'
+
+[ "$1" ] || { printf 'usage: %s <commit-msg without package name>\n' "${0##*/}"; exit 0 ;}
+git reset; git add .;  git commit -m "${PWD##*/}: $*"

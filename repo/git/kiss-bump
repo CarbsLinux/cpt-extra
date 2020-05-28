@@ -1,0 +1,12 @@
+#!/bin/sh
+# Commit the current directory as a version bump
+
+case "$1" in --help|-h) printf '%s\n' "usage: ${0##*/}"; exit 0 ; esac
+
+read ver _ < version || {
+    printf '%s\n' "could not find version file, are you on a package directory?"
+    exit 1
+}
+
+git reset; git add .
+git commit -m "${PWD##*/}: bump to $ver"
