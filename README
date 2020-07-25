@@ -1,7 +1,7 @@
-kiss-extra
-----------
+cpt-extra
+---------
 
-This is a repository for kiss utilities that do not belong with
+This is a repository for cpt utilities that do not belong with
 the rest of the utilities. These are non-essential scripts that
 someone could make use of in their scripts. Some of them can be
 used for repository management, so I think maintainers could be
@@ -11,17 +11,17 @@ interested in a variety of utilities here.
 Install
 -------
 
-Those scripts currently only depend on kiss (and dependencies of
-kiss).
+Those scripts currently only depend on cpt (and dependencies of
+cpt).
 
 You can install by doing
 
-    find . -type f -name 'kiss-*' | while read -r script; do
+    find . -type f -name 'cpt-*' | while read -r script; do
         install -Dm755 "$script" "/usr/local/bin/${script##*/}"
     done
 
 
-Or install the `kiss-extra` package on Carbs Linux.
+Or install the `cpt-extra` package on Carbs Linux.
 
 
 Repository structure
