@@ -14,10 +14,10 @@ pkg=$1
 [ "${2##/*}" ] && command=">usr>bin>$2" ||
     command="$(printf '%s' "$2" | sed 's#/#>#g')"
 
-[ -h "${file:=/var/db/kiss/choices/$pkg$command}" ] && {
+[ -h "${file:=/var/db/cpt/choices/$pkg$command}" ] && {
     printf 'ERROR: %s\n' "$file is a symlink"
     exit 1
 }
 
 shift 2
-exec "/var/db/kiss/choices/$pkg$command" "$@"
+exec "/var/db/cpt/choices/$pkg$command" "$@"

@@ -5,7 +5,7 @@
 case "$1" in ''|--help|-h) printf 'usage: %s <pkg>\n' "${0##*/}"; exit 0; esac
 
 pkg="$1"
-IFS=:; set -- $KISS_PATH; unset IFS
+IFS=:; set -- $CPT_PATH; unset IFS
 
 for repo do
     # Change directory to the upper directory of the repository
